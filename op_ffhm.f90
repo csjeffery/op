@@ -1,0 +1,25 @@
+SUBROUTINE OP_FFHM (T,FRE,PE,ZH1, AN22)
+
+  !     Total free-free continuous absorption coefficient 
+  !     per negative hydrogen ion 
+
+  USE OP_PRECISIONS
+  IMPLICIT NONE 
+
+  REAL, INTENT(IN) :: T, PE
+  REAL(KIND=QQ), INTENT(IN) :: FRE
+  REAL, INTENT(IN) :: ZH1
+  REAL, INTENT(OUT) :: AN22
+
+  REAL, PARAMETER :: HH = 4.7993E-11 
+  REAL(KIND=QQ) :: F
+  REAL :: THET
+
+  F = FRE/1.0000E+14
+  THET = 5040.2/T
+  AN22 = 1.0000E-26*PE*(0.0053666-0.011493*THET+0.027029*THET**2- & 
+       (3.2062-11.924*THET+5.9390*THET**2)*2.99793E-02/F- &
+       (0.40192-7.0355*THET+0.34592*THET**2)*0.8987584/F**2)
+  AN22 = MAX(AN22*2./ZH1,0.)
+
+END SUBROUTINE OP_FFHM

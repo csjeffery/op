@@ -1,0 +1,20 @@
+  MODULE OP_PEACH
+
+    IMPLICIT NONE
+ 
+    ! This module stores the peach opacity tables in 7 different arrays,
+    ! 5 for Carbon and 3 for Nitrogen
+    ! Names and dimensions of tables consistent with those used in Sterne, 
+    ! subroutine PEACH
+
+    REAL, DIMENSION (6,37) :: TAB1C1, TAB2C1, TAB3C1, TAB4C1, TAB5C1
+    REAL, DIMENSION (6,33) :: TAB1C2, TAB2C2, TAB3C2, TAB4C2, TAB5C2
+    REAL, DIMENSION (6,40) :: TAB1C3, TAB2C3, TAB3C3, TAB4C3, TAB5C3
+    REAL, DIMENSION (6,48) :: TAB1C4, TAB2C4, TAB3C4, TAB4C4, TAB5C4
+    REAL, DIMENSION (6,45) :: TAB1N1, TAB2N1, TAB3N1, TAB4N1, TAB5N1
+    REAL, DIMENSION (6,40) :: TAB1N2, TAB2N2, TAB3N2, TAB4N2
+    REAL, DIMENSION (6,27) :: TAB1N3, TAB2N3, TAB3N3
+
+    REAL, DIMENSION (6,37) :: TFF1C1, TFF2C1, TFF3C1, TFF4C1, TFF5C1
+
+  END MODULE OP_PEACH
